@@ -38,22 +38,22 @@ const JobDetails = () => {
           <p>
             Category: <span>{job.category}</span>
           </p>
-          {/* <p>
+          <p>
             Country: <span>{job.country}</span>
           </p>
           <p>
             City: <span>{job.city}</span>
-          </p> */}
+          </p>
           <p>
             Location: <span>{job.location}</span>
           </p>
-          {/* <p>
+          <p>
             Description: <span>{job.description}</span>
-          </p> */}
+          </p>
           <p>
             Job Posted On: <span>{job.jobPostedOn}</span>
           </p>
-          {/* <p>
+          <p>
             Salary:{" "}
             {job.fixedSalary ? (
               <span>{job.fixedSalary}</span>
@@ -62,7 +62,7 @@ const JobDetails = () => {
                 {job.salaryFrom} - {job.salaryTo}
               </span>
             )}
-          </p> */}
+          </p>
           {user && user.role === "Job Seeker" ? (
             <></>
           ) : (

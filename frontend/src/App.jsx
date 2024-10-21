@@ -12,6 +12,10 @@ import Footer from "./components/Layout/Footer";
 import Navbar from "./components/Layout/Navbar";
 import Jobs from "./components/Job/Jobs";
 import MyJobs from "./components/Job/MyJobs";
+import JobDetails from "./components/Job/JobDetails";
+import Application from "./components/Application/Application";
+import MyApplications from "./components/Application/MyApplication";
+import PostJob from "./components/Job/PostJob";
 
 function App() {
   const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
@@ -45,6 +49,10 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/job/getall" element={<Jobs />} />
           <Route path="/job/me" element={<MyJobs />} />
+          <Route path="/job/:id" element={<JobDetails />} />
+          <Route path="/application/:id" element={<Application />} />
+          <Route path="/applications/me" element={<MyApplications />} />
+          <Route path="/job/post" element={<PostJob />} />
         </Routes>
         <Footer />
         <Toaster />
