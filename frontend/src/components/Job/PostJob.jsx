@@ -100,6 +100,7 @@ const PostJob = () => {
                 <option value="MERN Stack Development">
                   MERN STACK Development
                 </option>
+
                 <option value="Account & Finance">Account & Finance</option>
                 <option value="Artificial Intelligence">
                   Artificial Intelligence

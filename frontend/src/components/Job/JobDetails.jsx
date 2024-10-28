@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../main";
+import "./Jobs.css";
 const JobDetails = () => {
   const { id } = useParams();
   const [job, setJob] = useState({});
@@ -28,12 +29,12 @@ const JobDetails = () => {
   }
 
   return (
-    <section className="jobDetail page">
-      <div className="container">
-        <h3>Job Details</h3>
-        <div className="banner">
+    <section className="job-detail-page">
+      <div className="job-detail-container">
+        <h3 className="job-detail-title">Job Details</h3>
+        <div className="job-detail-banner">
           <p>
-            Title: <span> {job.title}</span>
+            Title: <span>{job.title}</span>
           </p>
           <p>
             Category: <span>{job.category}</span>
@@ -63,10 +64,15 @@ const JobDetails = () => {
               </span>
             )}
           </p>
-          {user && user.role === "Job Seeker" ? (
+          {user && user.role === "Employer" ? (
             <></>
           ) : (
-            <Link to={`/application/${job._id}`}>Apply Now</Link>
+            <Link
+              to={`/application/${job._id}`}
+              className="job-detail-apply-link"
+            >
+              Apply Now
+            </Link>
           )}
         </div>
       </div>

@@ -1,0 +1,178 @@
+.application {
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.application .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.application h3 {
+  font-size: 2.4rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.application form {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.application form input,
+.application form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e8ef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.application form input:focus,
+.application form textarea:focus {
+  border-color: #3498db;
+}
+
+.application form input::placeholder,
+.application form textarea::placeholder {
+  color: #95a5a6;
+}
+
+.application form textarea {
+  height: 150px;
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.application form input[type="number"]::-webkit-inner-spin-button,
+.application form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.application form input[type="file"] {
+  padding: 10px;
+  border: 2px dashed #e1e8ef;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.application form input[type="file"]:hover {
+  border-color: #3498db;
+}
+
+.application form .file-input-wrapper {
+  margin-top: 10px;
+}
+
+.application form .file-input-label {
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.application form button {
+  background: #3498db;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.application form button:hover {
+  background: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .application {
+    padding: 20px 15px;
+  }
+
+  .application h3 {
+    font-size: 2rem;
+  }
+
+  .application form {
+    padding: 20px;
+  }
+
+  .application form input,
+  .application form textarea {
+    padding: 10px 14px;
+  }
+
+  .application form button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+/* Appli.css */
+
+.my-applications {
+  padding: 20px;
+}
+
+.applications-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.job-seeker-card,
+.employer-card {
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  margin: 10px 0; /* Space between cards */
+  background-color: #f9f9f9; /* Light background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.details {
+  margin-bottom: 10px; /* Space between details and resume section */
+}
+
+.resume-section {
+  margin: 10px 0; /* Space between resume and button area */
+}
+
+.resume-image {
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer; /* Pointer on hover */
+  border-radius: 4px; /* Rounded corners for the image */
+}
+
+.button-area {
+  display: flex;
+  justify-content: center; /* Center button horizontally */
+}
+
+.button-area button {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 15px; /* Padding */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.button-area button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

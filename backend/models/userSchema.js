@@ -12,7 +12,16 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, "Please enter your Email!"],
-    validate: [validator.isEmail, "Please provide a valid Email!"],
+    validate: [
+      {
+        validator: (email) => validator.isEmail(email),
+        message: "Please provide a valid Email!",
+      },
+      {
+        validator: (email) => email.endsWith("@somaiya.edu"),
+        message: "Only @somaiya.edu addresses are allowed!",
+      },
+    ],
   },
   phone: {
     type: Number,
@@ -21,7 +30,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "Please provide a Password!"],
-    minLength: [8, "Password must contain at least 8 characters!"],
+    minLength: [8, "Password must contain at least 4 characters!"],
     maxLength: [32, "Password cannot exceed 32 characters!"],
     select: false,
   },
@@ -36,8 +45,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-
-
+//ENCRYPTING THE PASSWORD WHEN THE USER REGISTERS OR MODIFIES HIS PASSWORD
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
@@ -50,7 +58,7 @@ userSchema.methods.comparePassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-//GENERATING A JWT TOKEN WHEN A USER REGISTERS OR LOGINS, IT DEPENDS ON OUR CODE THAT WHEN DO WE NEED TO GENERATE THE JWT TOKEN WHEN THE USER LOGIN OR REGISTER OR FOR BOTH. 
+//GENERATING A JWT TOKEN WHEN A USER REGISTERS OR LOGINS, IT DEPENDS ON OUR CODE THAT WHEN DO WE NEED TO GENERATE THE JWT TOKEN WHEN THE USER LOGIN OR REGISTER OR FOR BOTH.
 userSchema.methods.getJWTToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
     expiresIn: process.env.JWT_EXPIRE,
