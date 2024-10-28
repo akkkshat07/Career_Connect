@@ -182,7 +182,7 @@ const EmployerCard = ({ element, openModal }) => {
       </div>
       <div>
         <button>
-          <a href="http://localhost:8018">Analyse Resume</a>
+          <a href="http://localhost:8018"> Analyse Resume </a>
         </button>
       </div>
     </div>
