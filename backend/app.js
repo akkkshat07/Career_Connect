@@ -75,6 +75,9 @@ app.use(
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/job", jobRouter);
 app.use("/api/v1/application", applicationRouter);
+app.get("/check", (req, res) => {
+  res.status(200).json({ message: "Server is up and running!" });
+});
 
 dbConnection();
 
